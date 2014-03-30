@@ -1,0 +1,19 @@
+{
+  "packages": {
+    "bootstrap-3": {},
+    "user-session": {},
+    "accounts-anonymous": {
+      "git": "https://github.com/Codeklopper/meteor-accounts-anonymous.git",
+      "branch": "master"
+    },
+    "user-status": {},
+    "stale-session": {},
+    "jquery-ui": {},
+    "iron-router": {},
+    "collectionFS": {},
+    "cfs-handlebars": {
+      "git": "https://github.com/CollectionFS/Meteor-cfs-handlebars.git",
+      "branch": "master"
+    }
+  }
+}

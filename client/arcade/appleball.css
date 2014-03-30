@@ -1,0 +1,46 @@
+#startGameButton {
+  display: inline-block;
+  border: 1px solid #ccc;
+  background-color: #e8f0f8;
+  padding: 4px;
+  border-radius: 16px;
+  text-decoration: none;
+  margin-top: 8px;
+}
+
+#startGameButton:hover {
+  border: 1px solid #fff;
+  background-color: #cc8888;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a #startGameButton {
+  text-decoration: none;
+}
+
+.answer-body {
+  padding: 8px;
+}
+
+.score {
+  border-bottom: 1px solid #eee;
+}
+
+.scorePlace {
+  width: 24px;
+  padding-right: 24px;
+  font-weight: 400;
+  text-align: right;
+}
+
+.scoreAmount {
+  text-align: right;
+}
+
+td.answer-letter {
+  font-weight: bold;
+  text-align: center;
+  background-color: #eee;
+}

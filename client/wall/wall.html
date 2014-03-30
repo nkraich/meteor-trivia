@@ -1,0 +1,50 @@
+<template name="wall">
+  <div id="wrapper">
+    {{> menuBar}}
+    <header>The Wall</header>
+    <div class="group-heading-warning">
+      <h3 class="wall-problem">Please don't upload anything for now, thanks!</h3>
+    </div><br />
+    {{>uploader}}
+    <!--<p style="text-align:right">
+      <a href="#">Post a comment or picture</a>
+    </p>-->
+    <!--<p>
+      <form>
+        <textarea id="wallPostTextArea" class="form-control input-md" rows="5"
+          placeholder="Type a message here." value=""></textarea>
+        <button style="float:right;" type="submit"
+          class="btn btn-default">Add your post</button>
+      </form>
+      <br />
+      <br />
+    </p>-->
+    <hr />
+    {{#each images}}
+      {{#if isUploaded}}
+      <div class="wallPost">
+        <a href="{{url}}" target="_blank">
+          <img class="wallImage" src="{{url}}">
+        </a>
+        {{#if metadata.username}}
+        <br />
+        <div style="margin-top:8px">Added by <b>{{metadata.username}}</b></div>
+        <br />
+        {{/if}}
+      </div>
+      {{/if}}
+    {{/each}}
+      
+  </div>
+</template>
+
+<template name="uploader">
+  <div id="uploader">
+  {{cfsFileInput imageCollection metadata}}
+  {{#if cfsIsUploading}}
+    <br />
+    Uploading...<br />
+    {{cfsUploadProgressBar}}
+  {{/if}}
+  </div>
+</template>

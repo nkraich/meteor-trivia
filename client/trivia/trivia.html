@@ -1,0 +1,48 @@
+<template name="trivia">
+  <div id="triviaWrapper">
+    {{> menuBar}}
+    <header>Pub Quiz</header>
+    {{#if running}}
+    {{> question }}
+    {{else}}
+    <div class="group-heading">
+      <h3 class="group-title">Trivia is off.</h3>
+    </div>
+    <br />
+    <p>Hey there!  The quiz runs every 2 weeks on Saturday.  Come back and
+    join us when we're all here.  :)</p>
+    <p>Last week's winner was <b>Zenith</b>!</p>
+    <p>Nash won the "identify this game" round.</p>
+    <p>Nim won a round with a bunch of his own questions.</p>
+    <p>Terrible fake prizes were "distributed".</p>
+    <p>See you next time on Saturday, March 8th at 16:30 GMT.  (The game jam
+    will also be going on then!)</p>
+    <hr />
+    <p>
+      Rules:
+    </p>
+    <p>
+      Everyone sees the same question at once.  You have 60 seconds to answer
+      each question.  The number of questions in each round will be announced
+      in the chat, along with the horrible prize (tm) that the winner will
+      receive.
+    </p>
+    <p>
+      Answering questions sooner earns you more points:
+    </p>
+    <p>
+    <ul>
+      <li>Within 10 seconds &mdash; 50 points</li>
+      <li>Within 20 seconds &mdash; 40 points</li>
+      <li>Within 35 seconds &mdash; 25 points</li>
+      <li>Within 50 seconds &mdash; 10 points</li>
+      <li>Within 60 seconds &mdash; 5 points</li>
+    </ul>
+    </p>
+    {{/if}}
+    <div id="triviaPush"></div>
+  </div>
+  <div id="triviaFooter">
+    {{> info }}
+  </div>
+</template>

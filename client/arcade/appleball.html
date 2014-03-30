@@ -1,0 +1,29 @@
+<template name="arcade_appleball">
+  <div id="wrapper">
+    {{> menuBar}}
+    {{#if showScorePage}}
+    <header>Who Is Most Apple?</header>
+    <table>
+      {{#each scores}}
+      <tr class="score">
+        <td class="scorePlace">{{index}}</td>
+        <td>{{username}}</td>
+        <td class="scoreAmount">{{amount}}</td>
+      </tr>
+      {{/each}}
+    </table>
+    <center>
+    <br />
+    <br />
+    You could be the most!<br />
+    <a id="startGameButton">Fight for apple.</a>
+    </center>
+    {{else}}
+    <center style="margin-top:16px;">
+    <iframe id="arcadeFrame" name="arcadeFrame" src="/arcade/appleball/appleball.html" frameborder="0" width="320" height="480"></iframe>
+    <br />
+    <a href="#" id="showScoresLink">Show high-scores</a>
+    </center>
+    {{/if}}
+  </div>
+</template>

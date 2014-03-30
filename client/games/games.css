@@ -1,0 +1,62 @@
+.highlightsImage {
+  max-width: 100%;
+  border: 1px solid #eee;
+}
+
+.floatLeft {
+  float: left;
+}
+
+.floatRight {
+  float: right;
+}
+
+.imageContainer {
+  text-align: center;
+}
+
+.reviewImage {
+  max-width: 100%;
+  max-height: 300px;
+  padding: 4px;
+  border: 1px solid #bbb;
+}
+
+.award {
+  display: inline-block;
+  border: 2px outset #ffbb00;
+  color: #775500;
+  border-radius: 16px;
+  padding: 8px;
+  margin-left: 16px;
+  vertical-align: text-middle;
+  background-color: #ffeecc;
+  font-size: 14px;
+  font-variant: small-caps;
+}
+
+.award2 {
+  display: inline-block;
+  border: 2px outset #aaa;
+  color: #777;
+  border-radius: 16px;
+  padding: 4px;
+  margin-left: 16px;
+  vertical-align: text-middle;
+  background-color: #eee;
+  font-size: 12px;
+  font-variant: small-caps;
+}
+
+.awardFloat {
+  float: right;
+  margin-bottom: 16px;
+}
+
+.awardFloat2 {
+  float: right;
+}
+.results li {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}

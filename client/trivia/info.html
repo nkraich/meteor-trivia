@@ -1,0 +1,35 @@
+<template name="info">
+  <div>
+    <div id="info">
+      <table width="100%">
+      <tr>
+        <td width="30%">
+          {{> timeRemaining }}
+        </td>
+        <td width="40%" style="text-align:center">
+          <p style="font-size:16px;margin-bottom:16px;">{{ username }}</p>
+        </td>
+        <td width="30%" style="text-align:right">
+          {{> score }}
+        </td>
+      </tr>
+      </table>
+    </div>
+  </div>
+</template>
+
+<template name="timeRemaining">
+  <span class="glyphicon glyphicon-time"></span>
+  <span class="lead">{{ value }}</span><br />
+  <small class="text-muted">
+    seconds remaining
+  </small>
+</template>
+
+<template name="score">
+  <span class="lead">{{ value }}</span>
+  <span class="glyphicon glyphicon-ok"></span><br />
+  <small class="text-muted pull-right">
+    points scored
+  </small>
+</template>

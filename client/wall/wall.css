@@ -1,0 +1,21 @@
+.wallPost {
+  margin-bottom: 16px;
+}
+
+.wallImage {
+  max-width: 100%;
+  border: 1px solid #eee;
+}
+
+#uploader {
+  text-align: center;
+}
+
+.wall-problem {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  font-size: 14px;
+  color: #fff;
+  margin: 0px;
+  font-weight: 400;
+}

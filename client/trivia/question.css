@@ -1,0 +1,39 @@
+table {
+  width: 100%;
+}
+
+.answer-body {
+  padding: 8px;
+}
+
+.answer {
+  border-bottom: 1px solid #eee;
+}
+
+.answer:hover {
+  cursor: pointer;
+  font-weight: 400;
+}
+
+td.answer-letter {
+  font-weight: bold;
+  text-align: center;
+  background-color: #eee;
+}
+
+.selected {
+  background-color: #e4e8ec;
+}
+
+.correct {
+  background-color: #e2ece2;
+}
+
+.incorrect {
+  background-color: #ece2e2;
+}
+
+/*.hover {
+  background-color: #aaccff;
+  cursor: pointer;
+}*/
