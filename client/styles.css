@@ -25,6 +25,10 @@ header {
   letter-spacing: -0.05em;
 }
 
+textarea {
+ resize: none;
+}
+
 .group {
 }
 

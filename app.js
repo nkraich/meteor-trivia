@@ -11,6 +11,7 @@ Questions = new Meteor.Collection("questions");
 Channels = new Meteor.Collection("channels");
 Messages = new Meteor.Collection("messages"); 
 Scores = new Meteor.Collection("scores"); 
+Posts = new Meteor.Collection("posts");
 
 Router.configure({
   layoutTemplate: 'layout'

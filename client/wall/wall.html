@@ -2,9 +2,11 @@
   <div id="wrapper">
     {{> menuBar}}
     <header>The Wall</header>
+    <!--
     <div class="group-heading">
       <h3 class="wall-problem">Uploading is back!</h3>
     </div><br />
+    -->
     {{>uploader2}}
     <!--<p style="text-align:right">
       <a href="#">Post a comment or picture</a>
@@ -19,6 +21,8 @@
       <br />
       <br />
     </p>-->
+    <hr />
+    {{>wallPosts}}
     <hr />
     {{#each images}}
       {{#if isUploaded}}
@@ -38,6 +42,12 @@
   </div>
 </template>
 
+<template name="wallPosts">
+  <p><b>New posts<b/></p>
+  {{#each posts}}
+  {{/each}}
+</template>
+
 <template name="uploader">
   <div id="uploader">
   {{cfsFileInput imageCollection metadata}}
@@ -50,6 +60,15 @@
 </template>
 
 <template name="uploader2">
-  <input type="file" id="fileInput" name="fileInput" size="chars"> <br />
-  <!--<a href="#" id="dateUpdater">Update post dates</a>-->
+  <form>
+    <textarea id="chatInput" class="form-control input-md" rows="4"
+      placeholder="Write a message here. (Optional)"></textarea>
+    <br />
+    <span class="btn btn-default btn-file">
+      Attach file <input id="fileInput2" type="file" />
+    </span>
+    <button type="button" class="btn btn-success btn-md" style="float:right">
+      <span class="glyphicon glyphicon-thumbs-up"></span> Do the Dew™
+    </button>
+  </form>
 </template>

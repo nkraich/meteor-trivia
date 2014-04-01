@@ -21,6 +21,12 @@ Template.wall.images = function () {
   });
 };
 
+Template.wallPosts.posts = function () {
+  return Posts.find({}, {
+    sort: {"updatedAt": -1}
+  });
+};
+
 Template.uploader.imageCollection = function() {
   return WallPostsFS;
 };
