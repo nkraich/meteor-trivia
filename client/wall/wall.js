@@ -17,7 +17,7 @@ initWall = function() {
 
 Template.wall.images = function () {
   return WallPostsFS.find({}, {
-    sort: {"copies.wallPostFileData.utime": -1},
+    sort: {"copies.wallPostFileData.updatedAt": -1, "copies.wallPostFileData.utime": -1},
   });
 };
 
@@ -61,5 +61,22 @@ Template.wall.events = {
         }
       }
     );
+  }
+};
+
+Template.uploader2.events = {
+  'change #fileInput': function(event, template) {
+    console.log('File selected.');
+    FS.Utility.eachFile(event, function(file) {
+      WallPostsFS.insert(file, function (err, fileObj) {
+        //If !err, we have inserted new doc with ID fileObj._id, and
+        //kicked off the data upload using HTTP
+      });
+    });
+  },
+
+  'click #dateUpdater': function(event, template) {
+    console.log('Updating post dates.');
+    Meteor.call('updatePostDates');
   }
 };

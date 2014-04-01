@@ -2,10 +2,10 @@
   <div id="wrapper">
     {{> menuBar}}
     <header>The Wall</header>
-    <div class="group-heading-warning">
-      <h3 class="wall-problem">Please don't upload anything for now, thanks!</h3>
+    <div class="group-heading">
+      <h3 class="wall-problem">Uploading is back!</h3>
     </div><br />
-    {{>uploader}}
+    {{>uploader2}}
     <!--<p style="text-align:right">
       <a href="#">Post a comment or picture</a>
     </p>-->
@@ -47,4 +47,9 @@
     {{cfsUploadProgressBar}}
   {{/if}}
   </div>
+</template>
+
+<template name="uploader2">
+  <input type="file" id="fileInput" name="fileInput" size="chars"> <br />
+  <!--<a href="#" id="dateUpdater">Update post dates</a>-->
 </template>

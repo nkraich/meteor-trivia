@@ -9,11 +9,10 @@
     "user-status": {},
     "stale-session": {},
     "jquery-ui": {},
-    "iron-router": {},
-    "collectionFS": {},
-    "cfs-handlebars": {
-      "git": "https://github.com/CollectionFS/Meteor-cfs-handlebars.git",
-      "branch": "master"
-    }
+    "iron-router": {
+      "git": "https://github.com/EventedMind/iron-router.git",
+      "tag": "v0.6.4"
+    },
+    "collectionFS": {}
   }
 }
