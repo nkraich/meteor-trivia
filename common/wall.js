@@ -11,7 +11,7 @@ Meteor.methods({
     }
 
     newWallPost.createdAt = new Date();
-    var id = WallPosts.insert(newWallPost);
+    var id = Posts.insert(newWallPost);
     
     return id;
   }

@@ -93,3 +93,20 @@ input {
   width: 80px;
   text-align: right;
 }
+
+.deleteButton {
+  font-size:20px;
+  position:relative;
+  left:-16px;
+  top:-8px;
+  vertical-align:top;
+  background-color:#fff;
+  border-radius:12px;
+  padding:2px;
+  color:#330000;
+}
+
+.deleteButton:hover {
+  color:#ff0000;
+  cursor:pointer;
+}

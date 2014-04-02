@@ -44,15 +44,6 @@ Template.chat.loggedIn = function() {
 
 })();
 
-//--------------
-//  UI Helpers
-//--------------
-
-Handlebars.registerHelper('addLinks', function(text) {
-  var result = Autolinker.link(text);
-  return new Handlebars.SafeString(result);
-});
-
 //----------
 //  Events
 //----------

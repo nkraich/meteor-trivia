@@ -11,10 +11,16 @@ initWall = function() {
   console.log("Initializing wall.");
 
   Meteor.publish('wall', function() {
-    return WallPostsFS.find({}, {
-      sort: {"copies.wallPostFileData.updatedAt": -1, "copies.wallPostFileData.utime": -1},
-      limit: 25 
-    });
+    return [
+      WallPostsFS.find({}, {
+        sort: {"copies.wallPostFileData.updatedAt": -1, "copies.wallPostFileData.utime": -1},
+        limit: 25 
+      }),
+      Posts.find({}, {
+        sort: {"createdAt": -1},
+        limit: 25
+      })
+    ];
   });
 };
 
@@ -40,4 +46,9 @@ Meteor.methods({
     });
     */
   }
+});
+
+FS.TempStore.on('ready', function(fileObj) {
+  console.log("Uploaded.");
+  //alert('Something happened!');
 });
