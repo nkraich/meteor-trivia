@@ -13,6 +13,19 @@ Meteor.methods({
       return;
     }
 
+    splitString = newMessage.message.split(' ');
+    if (splitString[0] === "/title") {
+      splitString.shift();
+      var newTitle = splitString.join(' ');
+      var config = GlobalConfigs.findOne()
+      GlobalConfigs.update({_id: config._id}, {
+          $set: {
+              siteTitle: newTitle
+          }
+      });
+      return;
+    }
+
     var isAdmin = newMessage.userName === "puffin" || newMessage.userName === "nim";
 
     if (isAdmin && newMessage.message === "/start") {

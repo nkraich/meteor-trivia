@@ -1,12 +1,14 @@
 <template name="layout">
 <head>
+  <link href='http://fonts.googleapis.com/css?family=League+Script' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100'
     rel='stylesheet' type='text/css'>
-  <title>Klik &amp; Jam</title>
+  <title>{{siteTitle}}</title>
 </head>
 
 <body>
   <div class="main">
+    {{> menuBar}}
     {{> leftPanel}}
     {{> rightPanel}}
   </div>
@@ -32,21 +34,18 @@
 </template>
 
 <template name="menuBar">
+  <div class="header">
+  <h1>{{siteTitle}}</h1>
   <div class="menuBar">
-    <div class="menuBarItem">
-      <a href="/">Welcome</a>
-    </div>
-    <div class="menuBarItem">
-      <a href="/games">Jam Results</a>
-    </div>
-    <!--<div class="menuBarItem menuHighlight">
-      <a href="/arcade/appleball">Most Apple</a>
-    </div>-->
-    <div class="menuBarItem">
-      <a href="/quiz">Pub Quiz</a>
-    </div>
-    <div class="menuBarItem">
-      <a href="/wall">The Wall</a>
-    </div>
+    <a href="/" class="menuBarItem">
+      <span class="glyphicon glyphicon-home"></span>
+    </a><a href="/games" class="menuBarItem">
+      <span class="glyphicon glyphicon-wrench"></span>
+    </a><a href="/quiz" class="menuBarItem">
+      <span class="glyphicon glyphicon-glass"></span>
+    </a><a href="/wall" class="menuBarItem">
+      <span class="glyphicon glyphicon-picture"></span>
+    </a>
+  </div>
   </div>
 </template>

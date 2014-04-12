@@ -9,10 +9,14 @@
 
 initData = function ()
 {
-  Meteor.users.remove({});
-  Messages.remove({});
+  //Meteor.users.remove({});
+  //Messages.remove({});
 
   initQuestions();
+
+  // Reset and insert a blank global config.
+  GlobalConfigs.remove({});
+  GlobalConfigs.insert({siteTitle: "Doge³ Software"});
 
   Channels.remove({});
   var channels = [

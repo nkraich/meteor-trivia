@@ -11,6 +11,7 @@ initWall = function() {
   console.log("Initializing wall.");
 
   Meteor.publish('wall', function() {
+    //var dateLimit = new Date("April 1, 2014 01:00:00");
     return [
       WallPostsFS.find({}, {
         sort: {"copies.wallPostFileData.updatedAt": -1, "copies.wallPostFileData.utime": -1},

@@ -33,6 +33,7 @@ initMain = function()
   Meteor.subscribe("trivia");
   Meteor.subscribe("wall");
   Meteor.subscribe("arcade");
+  Meteor.subscribe("globalConfigs");
 
   startNewQuestion = function() {
     answered = false;
@@ -89,6 +90,25 @@ Template.username.value = function () {
     return "";
   }
 };
+
+Template.layout.siteTitle = function () {
+  if (GlobalConfigs.findOne() && GlobalConfigs.findOne().siteTitle !== "") {
+    return GlobalConfigs.findOne().siteTitle;
+  }
+  else {
+    return ""
+  }
+};
+
+Template.menuBar.siteTitle = function () {
+  if (GlobalConfigs.findOne() && GlobalConfigs.findOne().siteTitle !== "") {
+    return GlobalConfigs.findOne().siteTitle;
+  }
+  else {
+    return ""
+  }
+};
+
 
 //----------
 //  Events

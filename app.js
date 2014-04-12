@@ -12,6 +12,7 @@ Channels = new Meteor.Collection("channels");
 Messages = new Meteor.Collection("messages"); 
 Scores = new Meteor.Collection("scores"); 
 Posts = new Meteor.Collection("posts");
+GlobalConfigs = new Meteor.Collection("globalConfigs");
 
 Router.configure({
   layoutTemplate: 'layout'

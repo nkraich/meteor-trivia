@@ -16,7 +16,7 @@ initWall = function() {
 //------------------
 
 Template.wall.images = function () {
-  return WallPostsFS.find({}, {
+  return WallPostsFS.find({"copies.wallPostFileData.utime":{$exists: true}}, {
     sort: {"copies.wallPostFileData.updatedAt": -1, "copies.wallPostFileData.utime": -1}
   });
 };
@@ -120,8 +120,13 @@ Template.uploader2.events = {
   'click #postButton' : function(e, tmpl) {
     e.preventDefault();
 
+    var body = tmpl.find("#wallPostTextArea").value
+    if (body === "" && !Session.get('wallFile')) {
+      return;
+    }
+
     var newWallPost = {
-      body : tmpl.find("#wallPostTextArea").value
+      body: body
     };
 
     if (Meteor.user().username !== "") {

@@ -13,12 +13,17 @@ Meteor.startup(function() {
   timeRemaining = 0;
   question = null;
 
+  Meteor.publish("globalConfigs", function() {
+    return GlobalConfigs.find({});
+  });
+
   // Module initialization
   initMain();
   initChat();
   initTrivia();
   initWall();
   initArcade();
+
 });
 
 initMain = function() {
