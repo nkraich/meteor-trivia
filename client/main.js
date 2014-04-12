@@ -124,3 +124,26 @@ setUpEvents = function() {
     });
   });
 };
+
+Template.menuBar.events = {
+  'click #maxLeftOption': function(event, template) {
+    $('#leftPanel').css('width', '100%');
+    $('#leftPanel').css('display', 'inline-block');
+    $('#rightPanel').css('display', 'none');
+  },
+
+  'click #maxRightOption': function(event, template) {
+    $('#rightPanel').css('width', '100%');
+    $('#rightPanel').css('display', 'inline-block');
+    $('#rightPanel').css('left', '0%');
+    $('#leftPanel').css('display', 'none');
+  },
+
+  'click #splitOption': function(event, template) {
+    $('#leftPanel').css('width', '50%');
+    $('#leftPanel').css('display', 'inline-block');
+    $('#rightPanel').css('width', '50%');
+    $('#rightPanel').css('display', 'inline-block');
+    $('#rightPanel').css('left', '50%');
+  }
+};
