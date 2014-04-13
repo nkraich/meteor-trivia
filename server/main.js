@@ -1,7 +1,7 @@
-//-----------------------
+//------------------------------
 //  K&J server
-//  © 2014, NWK Systems
-//-----------------------
+//  © 2014, Nicholas W. Kraich
+//------------------------------
 
 //--------------------
 //  Server interface
@@ -13,23 +13,17 @@ Meteor.startup(function() {
   timeRemaining = 0;
   question = null;
 
-  Meteor.publish("globalConfigs", function() {
-    return GlobalConfigs.find({});
-  });
-
   // Module initialization
   initMain();
+  initWall();
   initChat();
   initTrivia();
-  initWall();
   initArcade();
-
 });
 
-initMain = function() {
+initMain = function()
+{
   console.log("Initializing server core.");
-
-  timeRemaining = SECONDS_PER_QUESTION;
 
   // Initialize the database if it's empty.
   if (Questions.find().count() === 0) {
@@ -44,13 +38,15 @@ initMain = function() {
     }
   });
 
+  // Publish global server variables, stored in a single GlobalConfig document.
+  Meteor.publish("globalConfigs", function() {
+    return GlobalConfigs.find({});
+  });
+
+  // Publish the active users.
   Meteor.publish("main", function(channelName) {
     return Meteor.users.find(
       {
-        //'services.resume.loginTokens.1': {$exists: true}
-        //'services.resume.loginTokens': {$size: {$gt: 0}}
-        //'status.online': true
-        //'services.resume.loginTokens': {$size: {$gt: 0}}
         'services.resume.loginTokens': {$size: 1}
       },
       {
@@ -65,11 +61,13 @@ initMain = function() {
 //  Client interface
 //--------------------
 
-Meteor.methods({
+Meteor.methods(
+{
   initializeDatabase: function()
   {
     initData();
   },
+
   initializeQuestions: function()
   {
     initQuestions();

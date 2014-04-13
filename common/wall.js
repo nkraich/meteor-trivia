@@ -1,4 +1,5 @@
-Meteor.methods({
+Meteor.methods(
+{
   addWallPost : function (newWallPost)
   {
     Meteor.call('heartbeat');  // Return user from away if necessary.

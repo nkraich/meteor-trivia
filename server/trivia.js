@@ -1,6 +1,6 @@
 //--------------------------------
 //  Trivia module for K&J server
-//  © 2014, NWK Systems
+//  © 2014, Nicholas W. Kraich
 //--------------------------------
 
 //--------------------
@@ -15,7 +15,7 @@ initTrivia = function() {
     return Questions.find({current: true});
   });
 
-  //_showQuestion(questionNumber);
+  timeRemaining = SECONDS_PER_QUESTION;
 
   Meteor.setInterval(function()
   {
@@ -32,14 +32,13 @@ initTrivia = function() {
 //  Client interface
 //--------------------
 
-Meteor.methods({
-  getTimeRemaining: function()
-  {
+Meteor.methods(
+{
+  getTimeRemaining: function() {
     return timeRemaining;
   },
 
-  nextQuestion: function()
-  {
+  nextQuestion: function() {
     if (questionNumber === -1) { return; }
     Questions.update({}, {$set: {current: false}}, {multi: true});
     questionNumber -= 1;
@@ -77,15 +76,13 @@ Meteor.methods({
     }
   },
 
-  stopTrivia: function()
-  {
+  stopTrivia: function() {
     console.log("Stopping trivia.");
     questionNumber = -1;
     Questions.update({}, {$set: {current: false}}, {multi: true});
   },
 
-  startTrivia: function(questionNum)
-  {
+  startTrivia: function(questionNum) {
     console.log("Starting trivia.");
 
     // Reset scores.
@@ -109,7 +106,8 @@ _getQuestionFromNumber = function(questionNumber) {
   return Questions.findOne({number: questionNumber});
 };
 
-_addToScore = function(amount) {
+_addToScore = function(amount)
+{
   if (! Meteor.userId()) { return; }
 
   var user = Meteor.user();

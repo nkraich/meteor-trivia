@@ -1,6 +1,6 @@
 //---------------------------------------
 //  Database initializer for K&J server
-//  © 2014, NWK Systems
+//  © 2014, Nicholas W. Kraich
 //---------------------------------------
 
 //-------------
@@ -9,9 +9,6 @@
 
 initData = function ()
 {
-  //Meteor.users.remove({});
-  //Messages.remove({});
-
   initQuestions();
 
   // Reset and insert a blank global config.

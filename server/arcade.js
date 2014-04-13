@@ -1,13 +1,14 @@
 //--------------------------------
 //  Arcade module for K&J server
-//  © 2014, NWK Systems
+//  © 2014, Nicholas W. Kraich
 //--------------------------------
 
 //--------------------
 //  Server interface
 //--------------------
 
-initArcade = function() {
+initArcade = function()
+{
   console.log("Initializing arcade.");
 
   Meteor.publish('arcade', function() {
@@ -22,9 +23,9 @@ initArcade = function() {
 //  Client interface
 //--------------------
 
-Meteor.methods({
-  addScore: function(amount)
-  {
+Meteor.methods(
+{
+  addScore: function(amount) {
     var user = Meteor.user();
     var name = "Anonymous";
     if (user && user.username) {

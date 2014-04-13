@@ -1,4 +1,5 @@
-Meteor.startup(function () {
+Meteor.startup(function ()
+{
   WallPostsFS = new FS.Collection("wallPosts", {
     stores: [new FS.Store.GridFS("wallPostFileData")],
     filter: {
