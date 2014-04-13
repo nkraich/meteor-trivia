@@ -50,6 +50,8 @@ p {
 .header {
   background-color: #e8f0f8;
   height: 40px;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .header h1 {
@@ -68,8 +70,11 @@ p {
 
 .menuBar {
   display: inline-block;
-  float: right;
-  margin-right: 8px;
+  position: absolute;
+  right: 0px;
+  padding-left: 8px;
+  padding-right: 8px;
+  background: #e8f0f8;
 }
 
 .menuBarItem {
@@ -80,10 +85,10 @@ p {
   padding-bottom: 8px;
   font-size: 20px;
   color: #428bca;
+  height: 40px;
 }
 
 .menuBarItem .iconglyph {
-  z-index:1000;
 }
 
 .menuBarItem:hover {
