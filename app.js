@@ -47,6 +47,10 @@ Router.map(function ()
     path: '/wall'
   });
 
+  this.route('wallArchive', {
+    path: '/wall/archive'
+  });
+
   this.route('games', {
     path: '/games'
   });

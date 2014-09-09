@@ -7,6 +7,8 @@
     </div><br />
     -->
     {{>uploader2}}
+    <br />
+    <a href="/wall/archive">View the archive</a>
     <!--<p style="text-align:right">
       <a href="#">Post a comment or picture</a>
     </p>-->
@@ -22,21 +24,6 @@
     </p>-->
     <hr />
     {{>wallPosts}}
-    <hr />
-    {{#each images}}
-      {{#if isUploaded}}
-      <div class="wallPost">
-        <a href="{{url}}" target="_blank">
-          <img class="wallImage" src="{{url}}">
-        </a>
-        {{#if metadata.username}}
-        <br />
-        <div style="margin-top:8px">Added by <b>{{metadata.username}}</b></div>
-        <br />
-        {{/if}}
-      </div>
-      {{/if}}
-    {{/each}}
       
   </div>
 </template>

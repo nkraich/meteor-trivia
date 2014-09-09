@@ -17,11 +17,25 @@ initWall = function() {
 
 Template.wall.images = function () {
   return WallPostsFS.find({"copies.wallPostFileData.utime":{$exists: true}}, {
-    sort: {"copies.wallPostFileData.updatedAt": -1, "copies.wallPostFileData.utime": -1}
+    sort: {"copies.wallPostFileData.updatedAt": -1, "copies.wallPostFileData.utime": -1},
+    limit: 25 
   });
 };
 
 Template.wallPosts.posts = function () {
+  return Posts.find({}, {
+    sort: {"createdAt": -1},
+    limit: 25 
+  });
+};
+
+Template.wallArchive.allImages = function () {
+  return WallPostsFS.find({"copies.wallPostFileData.utime":{$exists: true}}, {
+    sort: {"copies.wallPostFileData.updatedAt": -1, "copies.wallPostFileData.utime": -1}
+  });
+};
+
+Template.wallPostsArchive.allPosts = function () {
   return Posts.find({}, {
     sort: {"createdAt": -1}
   });

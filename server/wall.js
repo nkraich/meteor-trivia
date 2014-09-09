@@ -17,12 +17,10 @@ initWall = function() {
         sort: {
           "copies.wallPostFileData.updatedAt": -1,
           "copies.wallPostFileData.utime": -1
-        },
-        limit: 25 
+        }
       }),
       Posts.find({}, {
-        sort: {"createdAt": -1},
-        limit: 25
+        sort: {"createdAt": -1}
       })
     ];
   });
