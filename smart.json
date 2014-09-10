@@ -1,18 +1,12 @@
 {
   "packages": {
-    "bootstrap-3": {},
-    "user-session": {},
     "accounts-anonymous": {
       "git": "https://github.com/Codeklopper/meteor-accounts-anonymous.git",
       "branch": "master"
     },
-    "user-status": {},
-    "stale-session": {},
-    "jquery-ui": {},
     "iron-router": {
       "git": "https://github.com/EventedMind/iron-router.git",
       "tag": "v0.6.4"
-    },
-    "collectionFS": {}
+    }
   }
 }
