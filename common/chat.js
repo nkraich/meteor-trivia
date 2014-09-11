@@ -49,7 +49,7 @@ _runCommand = function(message)
       var newUsername = message.message.split(' ')[1];
       Meteor.users.update({_id: Meteor.userId()}, {
           $set: {
-              username: newUsername
+              profile: {name: newUsername}
           }
       });
       return;

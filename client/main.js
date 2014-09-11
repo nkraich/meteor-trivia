@@ -69,11 +69,12 @@ initMain = function()
   // Automatic anonymous login.
   Deps.autorun(function() {
     if (!Meteor.userId()) {
-      Meteor.loginAnonymously(function(err, res) {
+      Meteor.loginVisitor();
+      /*Meteor.loginAnonymously(function(err, res) {
         //alert("Logged in: " + Meteor.userId());
         Meteor.users.update({_id: Meteor.userId()}, { $set: { score: 0 } });
         Meteor.call('heartbeat');
-      });
+      });*/
     }
   });
 };
@@ -84,7 +85,7 @@ initMain = function()
 
 Template.username.value = function () {
   if (Meteor.user()) {
-    return Meteor.user().username;
+    return Meteor.user().profile.name;
   }
   else {
     return "";

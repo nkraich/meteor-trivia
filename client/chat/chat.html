@@ -32,9 +32,9 @@
 <template name="userList">
   {{#each users}}
   {{#if away}}
-  <div class="user"><i>{{username}} <span class="small">{{score}}</span></i></div>
+  <div class="user"><i>{{profile.name}} <span class="small">{{score}}</span></i></div>
   {{else}}
-  <div class="user">{{username}} <span class="small">{{score}}</span></div>
+  <div class="user">{{profile.name}} <span class="small">{{score}}</span></div>
   {{/if}}
   {{/each}}
   <div id="visitorsIndicator">{{visitorStatus}}</div>

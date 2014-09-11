@@ -19,6 +19,20 @@ Meteor.startup(function() {
   initChat();
   initTrivia();
   initArcade();
+
+  /*console.log("Fixing DB");
+  // Fix DB
+WallPostsFS.find().forEach(function (fileObj) {
+  var mod = {$set: {}, $unset: {}};
+  _.each(fileObj.copies, function (info, copyName) {
+    mod.$set['copies.' + copyName + '.updatedAt'] = info.utime || new Date;
+    mod.$unset['copies.' + copyName + '.utime'] = "";
+  });
+  fileObj.update(mod);
+  console.log("Fixed DB");
+});*/
+
+
 });
 
 initMain = function()

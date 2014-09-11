@@ -51,7 +51,7 @@ Template.uploader.imageCollection = function() {
 
 Template.uploader.metadata = function() {
   if (!Meteor.user()) { return {}; }
-  var username = Meteor.user().username;
+  var username = Meteor.user().profile.name;
   return  {username: username};
 };
 
@@ -143,8 +143,8 @@ Template.uploader2.events = {
       body: body
     };
 
-    if (Meteor.user().username !== "") {
-      newWallPost.username = Meteor.user().username;
+    if (Meteor.user().profile.name !== "") {
+      newWallPost.username = Meteor.user().profile.name;
     }
 
     if (Session.get('wallFile')) {
