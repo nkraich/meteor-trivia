@@ -35,12 +35,20 @@ Router.map(function ()
     template: 'welcome'
   });
 
-  this.route('jam', {
-    path: '/jam'
+  this.route('games', {
+    path: '/games'
   });
 
-  this.route('trivia', {
-    path: '/quiz'
+  this.route('members', {
+    path: '/members'
+  });
+
+  this.route('jam1Results', {
+    path: '/jam/results'
+  });
+
+  this.route('jam1Rules', {
+    path: '/jam/rules'
   });
 
   this.route('wall', {
@@ -51,9 +59,11 @@ Router.map(function ()
     path: '/wall/archive'
   });
 
-  this.route('games', {
-    path: '/games'
+  /*
+  this.route('trivia', {
+    path: '/quiz'
   });
+  */
 
   this.route('games', {
     path: '/games/:title',
@@ -62,11 +72,11 @@ Router.map(function ()
     }
   });
 
-  this.route('arcade', {
+  /*this.route('arcade', {
     path: '/arcade/:title',
     template: 'appleball',
     action: function () {
       this.render('arcade_' + this.params.title);
     }
-  });
+  });*/
 });
