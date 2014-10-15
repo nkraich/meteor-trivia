@@ -1,11 +1,14 @@
 <template name="wall">
   <div id="wrapper">
-    {{> menuBar}}
     <header>The Wall</header>
+    <!--
     <div class="group-heading">
       <h3 class="wall-problem">Uploading is back!</h3>
     </div><br />
+    -->
     {{>uploader2}}
+    <br />
+    <a href="/wall/archive">View the archive</a>
     <!--<p style="text-align:right">
       <a href="#">Post a comment or picture</a>
     </p>-->
@@ -20,22 +23,26 @@
       <br />
     </p>-->
     <hr />
-    {{#each images}}
-      {{#if isUploaded}}
-      <div class="wallPost">
-        <a href="{{url}}" target="_blank">
-          <img class="wallImage" src="{{url}}">
-        </a>
-        {{#if metadata.username}}
-        <br />
-        <div style="margin-top:8px">Added by <b>{{metadata.username}}</b></div>
-        <br />
-        {{/if}}
-      </div>
-      {{/if}}
-    {{/each}}
+    {{>wallPosts}}
       
   </div>
+</template>
+
+<template name="wallPosts">
+  {{#each posts}}
+    {{#if body}}
+    <div style="margin-top:8px">{{sanitizeContent body}}</div>
+    {{/if}}
+    {{#if attachedFileId}}
+    <img class="wallImage" src="{{getPictureUrl attachedFileId}}" />
+    {{/if}}
+    {{#if username}}
+    <div style="font-size:10px;margin-top:8px">Posted by <b>{{username}}</b>.</div>
+    {{else}}
+    <div style="font-size:10px;margin-top:8px"><i>Mystery post!</i></div>
+    {{/if}}
+    <br />
+  {{/each}}
 </template>
 
 <template name="uploader">
@@ -50,6 +57,21 @@
 </template>
 
 <template name="uploader2">
-  <input type="file" id="fileInput" name="fileInput" size="chars"> <br />
-  <!--<a href="#" id="dateUpdater">Update post dates</a>-->
+  <form>
+    <textarea id="wallPostTextArea" class="form-control input-md" rows="4"
+      placeholder="Write a message here. (Optional)"></textarea>
+    <br />
+    <span class="btn btn-default btn-file">
+      <span class="glyphicon glyphicon-floppy-open"></span>
+      Attach file <input id="fileInput2" type="file" />
+    </span>
+    <button id="postButton" type="button" class="btn btn-success btn-md" style="float:right">
+      <span class="glyphicon glyphicon-thumbs-up"></span> Do the Dew™
+    </button>
+  </form>
+  {{#if pendingFileUrl}}
+  <br />
+  <img class="pendingFileImage" src="{{pendingFileUrl}}">
+  <span id="pendingDeleteButton" class="glyphicon glyphicon-remove-circle deleteButton"></span>
+  {{/if}}
 </template>

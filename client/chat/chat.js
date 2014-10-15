@@ -38,20 +38,11 @@ Template.userList.visitorStatus = function() {
 
 Template.chat.loggedIn = function() {
   if (!Meteor.user()) { return false; }
-  var username = Meteor.user().username;
+  var username = Meteor.user().profile.name;
   return username;
 };
 
 })();
-
-//--------------
-//  UI Helpers
-//--------------
-
-Handlebars.registerHelper('addLinks', function(text) {
-  var result = Autolinker.link(text);
-  return new Handlebars.SafeString(result);
-});
 
 //----------
 //  Events
@@ -91,7 +82,7 @@ Template.username.events =
     if ($('#userName').val().length > 0 && Meteor.userId()) {
       Meteor.users.update({_id: Meteor.userId()}, {
           $set: {
-              username: $('#userName').val()
+              profile: {name: $('#userName').val()}
           }
       });
       Meteor.call('heartbeat');

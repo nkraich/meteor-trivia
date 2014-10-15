@@ -1,4 +1,5 @@
-Meteor.methods({
+Meteor.methods(
+{
   addWallPost : function (newWallPost)
   {
     Meteor.call('heartbeat');  // Return user from away if necessary.
@@ -11,7 +12,7 @@ Meteor.methods({
     }
 
     newWallPost.createdAt = new Date();
-    var id = WallPosts.insert(newWallPost);
+    var id = Posts.insert(newWallPost);
     
     return id;
   }

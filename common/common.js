@@ -1,6 +1,9 @@
-Meteor.startup(function () {
+Meteor.startup(function ()
+{
+  WallPostsStore = new FS.Store.GridFS("wallPostFileData");
   WallPostsFS = new FS.Collection("wallPosts", {
-    stores: [new FS.Store.GridFS("wallPostFileData")],
+    //stores: [new FS.Store.GridFS("wallPostFileData")],
+    stores: [WallPostsStore],
     filter: {
       maxSize: 1048576, //in bytes
       allow: {

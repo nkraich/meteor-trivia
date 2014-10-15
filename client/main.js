@@ -33,6 +33,7 @@ initMain = function()
   Meteor.subscribe("trivia");
   Meteor.subscribe("wall");
   Meteor.subscribe("arcade");
+  Meteor.subscribe("globalConfigs");
 
   startNewQuestion = function() {
     answered = false;
@@ -68,11 +69,12 @@ initMain = function()
   // Automatic anonymous login.
   Deps.autorun(function() {
     if (!Meteor.userId()) {
-      Meteor.loginAnonymously(function(err, res) {
+      Meteor.loginVisitor();
+      /*Meteor.loginAnonymously(function(err, res) {
         //alert("Logged in: " + Meteor.userId());
         Meteor.users.update({_id: Meteor.userId()}, { $set: { score: 0 } });
         Meteor.call('heartbeat');
-      });
+      });*/
     }
   });
 };
@@ -83,12 +85,31 @@ initMain = function()
 
 Template.username.value = function () {
   if (Meteor.user()) {
-    return Meteor.user().username;
+    return Meteor.user().profile.name;
   }
   else {
     return "";
   }
 };
+
+Template.layout.siteTitle = function () {
+  if (GlobalConfigs.findOne() && GlobalConfigs.findOne().siteTitle !== "") {
+    return GlobalConfigs.findOne().siteTitle;
+  }
+  else {
+    return ""
+  }
+};
+
+Template.menuBar.siteTitle = function () {
+  if (GlobalConfigs.findOne() && GlobalConfigs.findOne().siteTitle !== "") {
+    return GlobalConfigs.findOne().siteTitle;
+  }
+  else {
+    return ""
+  }
+};
+
 
 //----------
 //  Events
@@ -103,4 +124,27 @@ setUpEvents = function() {
       Session.set("timeRemaining", result);
     });
   });
+};
+
+Template.menuBar.events = {
+  'click #maxLeftOption': function(event, template) {
+    $('#leftPanel').css('width', '100%');
+    $('#leftPanel').css('display', 'inline-block');
+    $('#rightPanel').css('display', 'none');
+  },
+
+  'click #maxRightOption': function(event, template) {
+    $('#rightPanel').css('width', '100%');
+    $('#rightPanel').css('display', 'inline-block');
+    $('#rightPanel').css('left', '0%');
+    $('#leftPanel').css('display', 'none');
+  },
+
+  'click #splitOption': function(event, template) {
+    $('#leftPanel').css('width', '50%');
+    $('#leftPanel').css('display', 'inline-block');
+    $('#rightPanel').css('width', '50%');
+    $('#rightPanel').css('display', 'inline-block');
+    $('#rightPanel').css('left', '50%');
+  }
 };

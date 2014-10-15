@@ -11,8 +11,10 @@
   display: inline-block;
   overflow-y: scroll;
   width: 50%;
-  height: 100%;
   margin: 0px;
+  border-top: 1px solid #ccc;
+  top: 40px;
+  bottom: 0px;
 }
 
 #rightPanel {
@@ -21,10 +23,12 @@
   display: inline-block;
   left: 50%;
   width: 50%;
-  min-height: 100%;
   margin: 0px;
   margin-left: -1px;
   border-left: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  top: 40px;
+  bottom: 0px;
 }
 
 #wrapper {
@@ -41,19 +45,60 @@ p {
   font-weight: 300;
 }
 
-.menuBar {
+/* Header */
+
+.header {
   background-color: #e8f0f8;
-  text-align: center;
+  height: 40px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.header h1 {
+  position: absolute;
+  min-height: 40px;
+  display: inline-block;
+  font-size: 24px;
+  margin: 0;
+  padding: 0;
+  margin-left: 12px;
+  margin-top: 10px;
+  color: #777;
+  font-family: 'League Script', serif;
+  pointer-events:none;
+}
+
+.menuBar {
+  display: inline-block;
+  position: absolute;
+  right: 0px;
+  padding-left: 8px;
+  padding-right: 8px;
+  background: #e8f0f8;
 }
 
 .menuBarItem {
   display: inline-block;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-top: 8px;
-  margin-bottom: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-size: 14px;
+  line-height: 26px;
+  color: #428bca;
+  height: 40px;
+}
+
+.menuBarItem .glyphicon {
+  margin-left: 4px;
+}
+
+.menuBarItem:hover {
+  background: #fff;
+  cursor: pointer;
+  color: #dd8877;
+  text-decoration: none;
 }
 
 .menuHighlight a {
-  color: #dd8877;
 }
