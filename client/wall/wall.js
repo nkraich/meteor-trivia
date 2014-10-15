@@ -97,6 +97,7 @@ Handlebars.registerHelper('getPictureUrl', function(fileId) {
 
   var image = WallPostsFS.findOne({_id:fileId});
   if (image) {
+    //console.log(JSON.stringify(image));
     return image.url();
   }
   else {

@@ -32,7 +32,6 @@ WallPostsFS.find().forEach(function (fileObj) {
   console.log("Fixed DB");
 });*/
 
-
 });
 
 initMain = function()
