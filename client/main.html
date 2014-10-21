@@ -7,12 +7,22 @@
 </head>
 
 <body>
-  <div class="main">
-    <div class="header"></div>
+  <div id="mainContainer">
+    {{> header }}
     {{> leftPanel}}
     {{> rightPanel}}
   </div>
 </body>
+</template>
+
+<template name="header">
+  <header>
+    <div id="status">Practice round in-progress.</div>
+    <a href="http://kraich.com" target="_blank" id="logo">Meteor Trivia</a>
+    <div class="menuBar">
+      <div class="menuBarItem">{{ username }}</div>
+    </div>
+  </header>
 </template>
 
 <template name="leftPanel">

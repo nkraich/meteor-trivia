@@ -87,6 +87,15 @@ Template.username.value = function () {
   }
 };
 
+Template.header.username = function () {
+  if (Meteor.user()) {
+    return Meteor.user().profile.name;
+  }
+  else {
+    return "";
+  }
+};
+
 //----------
 //  Events
 //----------

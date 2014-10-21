@@ -28,19 +28,9 @@ Template.score.value = function () {
 //  Events
 //----------
 
-/*Template.info.events =
+Template.info.events =
 {
-  'click #userName': function(event) {
-    UserSession.set("username", "test");
-  },
-
-  'change #userName': function(event) {
-    if ($('#userName').val().length > 0 && Meteor.userId()) {
-      Meteor.users.update({_id: Meteor.userId()}, {
-          $set: {
-              username: $('#userName').val()
-          }
-      });
-    }
+  'click #rulesButton': function (event) {
+    Meteor.call('stopTrivia');
   }
-};*/
+};

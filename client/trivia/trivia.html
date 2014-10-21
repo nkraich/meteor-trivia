@@ -1,42 +1,15 @@
 <template name="trivia">
   <div id="triviaWrapper">
     {{#if running}}
-    {{> question }}
+      {{> question }}
     {{else}}
-    <div class="group-heading">
-      <h3 class="group-title">Trivia is off.</h3>
-    </div>
-    <br />
-    <p>
-      <b>Rules:</b>
-    </p>
-    <p>
-      Everyone sees the same question at once.  You have 60 seconds to answer
-      each question.
-    </p>
-    <p>
-      The current round is a <b>practice round</b>.  Practice rounds run every
-      20 minutes.
-    </p>
-    <p>The <b>plushie round</b> starts every Friday at 5:00 PM, PDT.  The winner
-    will receive a hand-made Meteor plushie shipped to their home or work
-    address.</p>
-    <p>
-      Answering questions sooner earns you more points:
-    </p>
-    <p>
-    <ul>
-      <li>Within 10 seconds &mdash; 50 points</li>
-      <li>Within 20 seconds &mdash; 40 points</li>
-      <li>Within 35 seconds &mdash; 25 points</li>
-      <li>Within 50 seconds &mdash; 10 points</li>
-      <li>Within 60 seconds &mdash; 5 points</li>
-    </ul>
-    </p>
+      {{> rules }}
     {{/if}}
     <div id="triviaPush"></div>
   </div>
   <div id="triviaFooter">
-    {{> info }}
+    {{#if running}}
+      {{> info }}
+    {{/if}}
   </div>
 </template>

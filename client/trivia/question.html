@@ -1,8 +1,5 @@
 <template name="question">
   <div class="group">
-    <div class="group-heading">
-      <h3 class="group-title">Question #{{ number }}</h3>
-    </div>
     <div class="group-body">
       {{#if picture}}
       <img src="{{ picture }}" /><br /><br />
@@ -27,5 +24,6 @@
         <td class="answer-body">{{ answerD }}</td>
       </tr>
     </table>
+    <p class="question-info">Question #{{ number }}</p>
   </div>
 </template>
