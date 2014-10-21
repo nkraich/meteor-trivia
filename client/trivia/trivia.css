@@ -3,8 +3,11 @@
   height: auto !important;
   height: 100%;
   margin: 0 auto -5em;
+}
+
+#triviaWrapper p {
   margin-left: 24px;
-  margin-right: 24px;
+  margin-right: 8px;
 }
 
 #triviaFooter, #triviaPush {

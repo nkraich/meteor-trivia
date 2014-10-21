@@ -1,8 +1,3 @@
-//-----------------------
-//  K&J web client
-//  © 2014, NWK Systems
-//-----------------------
-
 //-------------
 //  Interface
 //-------------
@@ -17,8 +12,6 @@ Meteor.startup(function () {
   initMain();
   initChat();
   initTrivia();
-  initWall();
-  initArcade();
   setUpEvents();
 });
 
@@ -26,13 +19,15 @@ initMain = function()
 {
   console.log("Initializing client core.");
 
-  initMisc();
+  $.extend({
+    playSound: function(){
+      return $("<embed src='"+arguments[0]+".mp3' hidden='true' autostart='true' loop='false' class='playSound'>" + "<audio autoplay='autoplay' style='display:none;' controls='controls'><source src='"+arguments[0]+".mp3' /><source src='"+arguments[0]+".ogg' /></audio>").appendTo('body');
+    }
+  });
 
   Meteor.subscribe("main");
   Meteor.subscribe("chat");
   Meteor.subscribe("trivia");
-  Meteor.subscribe("wall");
-  Meteor.subscribe("arcade");
   Meteor.subscribe("globalConfigs");
 
   startNewQuestion = function() {
@@ -91,25 +86,6 @@ Template.username.value = function () {
     return "";
   }
 };
-
-Template.layout.siteTitle = function () {
-  if (GlobalConfigs.findOne() && GlobalConfigs.findOne().siteTitle !== "") {
-    return GlobalConfigs.findOne().siteTitle;
-  }
-  else {
-    return ""
-  }
-};
-
-Template.menuBar.siteTitle = function () {
-  if (GlobalConfigs.findOne() && GlobalConfigs.findOne().siteTitle !== "") {
-    return GlobalConfigs.findOne().siteTitle;
-  }
-  else {
-    return ""
-  }
-};
-
 
 //----------
 //  Events

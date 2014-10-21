@@ -15,10 +15,8 @@ Meteor.startup(function() {
 
   // Module initialization
   initMain();
-  initWall();
   initChat();
   initTrivia();
-  initArcade();
 
   /*console.log("Fixing DB");
   // Fix DB

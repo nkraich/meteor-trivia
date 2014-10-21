@@ -3,12 +3,11 @@
   <link href='http://fonts.googleapis.com/css?family=League+Script' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100'
     rel='stylesheet' type='text/css'>
-  <title>{{siteTitle}}</title>
+  <title>Meteor Trivia</title>
 </head>
 
 <body>
   <div class="main">
-    {{> menuBar}}
     {{> leftPanel}}
     {{> rightPanel}}
   </div>
@@ -18,44 +17,11 @@
 <template name="leftPanel">
   <div id="leftPanel">
     {{> yield}}
-
-    <!--<br />
-    <br />
-    <hr />
-    <iframe src="https://mixlr.com/nwk/embed" width="100%" height="180px" scrolling="no" frameborder="no" marginheight="0" marginwidth="0"></iframe>
-    -->
   </div>
 </template>
 
 <template name="rightPanel">
   <div id="rightPanel">
     {{> chat}}
-  </div>
-</template>
-
-<template name="menuBar">
-  <div class="header">
-  <h1>{{siteTitle}}</h1>
-  <div class="menuBar">
-    <a href="/" class="menuBarItem">
-      Home <span class="glyphicon glyphicon-home"></span>
-    </a><a href="/games" class="menuBarItem">
-      Games <span class="glyphicon glyphicon-picture"></span>
-    </a><a href="/members" class="menuBarItem">
-      Members <span class="glyphicon glyphicon-user"></span>
-    </a><a href="/jam/results" class="menuBarItem">
-      Jam <span class="glyphicon glyphicon-wrench"></span>
-    </a><a href="/wall" class="menuBarItem">
-      Wall <span class="glyphicon glyphicon-bullhorn"></span>
-    </a><span class="dropdown"><span class="menuBarItem dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">
-        Settings <span class="glyphicon glyphicon-cog"></span>
-      </span>
-      <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
-        <li role="presentation"><a id="maxRightOption" tabindex="-1" href="#"><span class="glyphicon glyphicon-arrow-left"></span> Maximize chat</a></li>
-        <li role="presentation"><a id="maxLeftOption" tabindex="-1" href="#"><span class="glyphicon glyphicon-arrow-right"></span> Maximize site pages</a></li>
-        <li role="presentation"><a id="splitOption" tabindex="-1" href="#"><span class="glyphicon glyphicon-resize-horizontal"></span> Split screen</a></li>
-      </ul>
-    </span>
-  </div>
   </div>
 </template>
