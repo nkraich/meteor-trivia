@@ -12,7 +12,7 @@
   overflow-y: scroll;
   width: 50%;
   margin: 0px;
-  top: 0px;
+  top: 32px;
   bottom: 0px;
 }
 
@@ -25,7 +25,7 @@
   margin: 0px;
   margin-left: -1px;
   border-left: 1px solid #ccc;
-  top: 0px;
+  top: 32px;
   bottom: 0px;
 }
 
@@ -47,23 +47,18 @@ p {
 
 .header {
   background-color: #e8f0f8;
-  height: 40px;
+  height: 32px;
   overflow: hidden;
   white-space: nowrap;
-}
 
-.header h1 {
-  position: absolute;
-  min-height: 40px;
-  display: inline-block;
-  font-size: 24px;
-  margin: 0;
-  padding: 0;
-  margin-left: 12px;
-  margin-top: 10px;
-  color: #777;
-  font-family: 'League Script', serif;
-  pointer-events:none;
+  background: #808faa; /* Old browsers */
+  background: -moz-linear-gradient(-45deg,  #808faa 1%, #cedce7 68%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(1%,#808faa), color-stop(68%,#cedce7)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(-45deg,  #808faa 1%,#cedce7 68%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(-45deg,  #808faa 1%,#cedce7 68%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(-45deg,  #808faa 1%,#cedce7 68%); /* IE10+ */
+  background: linear-gradient(135deg,  #808faa 1%,#cedce7 68%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#808faa', endColorstr='#cedce7',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
 .menuBar {

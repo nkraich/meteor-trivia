@@ -18,4 +18,5 @@ cfs:gridfs
 accounts-base
 accounts-password
 artwells:accounts-guest
+less
 

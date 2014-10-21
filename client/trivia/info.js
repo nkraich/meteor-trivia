@@ -8,7 +8,7 @@ Template.timeRemaining.value = function () {
 
 Template.info.username = function () {
   if (Meteor.user()) {
-    return Meteor.user().username;
+    return Meteor.user().profile.name;
   }
   else {
     return "";
