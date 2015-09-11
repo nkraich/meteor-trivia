@@ -1,0 +1,80 @@
+<template name="settings">
+<div id="settings-page">
+  <br />
+  <div class="row">
+    <div class="col-xs-4">
+      <a href="/"><span class="glyphicon glyphicon glyphicon-chevron-left"></span> Return to trivia</a>
+    </div>
+    <div class="col-xs-4" style="text-align: center">
+      <b>Settings</b>
+    </div>
+    <div class="col-xs-4" style="text-align: right">
+    </div>
+  </div>
+  <br />
+
+  <p>
+    <div class="row">
+      <div class="col-xs-9">
+        Your nickname
+      </div>
+      <div class="col-xs-3" style="text-align: right">
+        <input type="checkbox" value="" style="margin-right: 4px;">
+        Play sounds
+      </div>
+    </div>
+  </p>
+  <p>
+    <input id="nickname" class="form-control input-md" value="{{ nickname }}" style="width: 50%">
+  </p>
+  <br />
+
+  <p>
+    Your email <i style="font-size: 10px; color: #777">(optional, won't be shared with anyone)</i>
+  </p>
+  <p>
+    <input id="email" class="form-control input-md" value="{{ email }}" style="width: 50%">
+  </p>
+  <br />
+
+  <p>
+    Your address <i style="font-size: 10px; color: #777">(in case you win a plushie)</i>
+  </p>
+  <p>
+    <input id="street" class="form-control input-md" value="{{ street }}" style="width: 75%" placeholder="Street address"><br />
+    <input id="apartment" class="form-control input-md" value="{{ apartment }}" style="width: 75%" placeholder="Apartment or suite no. (optional)"><br />
+    <div class="row">
+      <div class="col-xs-7">
+        <input id="city" class="form-control input-md" value="{{ city }}" placeholder="City">
+      </div>
+      <div class="col-xs-2">
+        <input id="city" class="form-control input-md" value="{{ city }}" placeholder="State">
+      </div>
+      <div class="col-xs-3">
+        <input id="city" class="form-control input-md" value="{{ city }}" placeholder="Zip code">
+      </div>
+    </div>
+  </p>
+  <br />
+  <hr />
+  <br />
+
+  <p>
+    Create an account <i style="font-size: 10px; color: #777">(so your settings are saved and so nobody else takes your nickname)</i>
+  </p>
+  <p>
+    <div class="row">
+      <div class="col-xs-5">
+        <input id="password" class="form-control input-md" value="{{ password }}" placeholder="Make up a password.">
+      </div>
+      <div class="col-xs-5">
+        <input id="password" class="form-control input-md" value="{{ password }}" placeholder="Type it again!">
+      </div>
+      <div class="col-xs-2">
+        <div class="button" id="createAccountButton">Bam!</div>
+      </div>
+    </div>
+  </p>
+
+</div>
+</template>

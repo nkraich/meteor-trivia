@@ -18,7 +18,7 @@ Template.messages.messages = function() {
 };
 
 Template.userList.users = function() {
-  return Meteor.users.find({username:{$ne:null}}, {sort: {score: -1, username: 1}});
+  return Meteor.users.find({'profile.name':{$ne:null}}, {sort: {score: -1, 'profile.name': 1}});
 };
 
 Template.userList.visitorStatus = function() {

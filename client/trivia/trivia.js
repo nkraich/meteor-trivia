@@ -4,6 +4,7 @@
 
 initTrivia = function() {
   console.log("Initializing trivia.");
+  Session.set('isRunning', false);
   initQuestion();
 };
 
@@ -11,6 +12,6 @@ initTrivia = function() {
 //  Data providers
 //------------------
 
-Template.trivia.running = function () {
-  return Questions.find().count() > 0;
+Template.trivia.isRunning = function () {
+  return Session.get('isRunning');
 };

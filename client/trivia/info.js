@@ -31,6 +31,6 @@ Template.score.value = function () {
 Template.info.events =
 {
   'click #rulesButton': function (event) {
-    Meteor.call('stopTrivia');
+    Session.set('isRunning', false);
   }
 };

@@ -67,13 +67,10 @@ _runCommand = function(message)
       return;
     }
 
-    var isAdmin = message.userName === "puffin"
-               || message.userName === "nim"
-               || message.userName === "BenH"
-               || message.userName === "DaveJ";
+    var isAdmin = message.userName === "nick";
 
     if (isAdmin && message.message === "/start") {
-      Meteor.call('startTrivia', 73);
+      Meteor.call('startTrivia', 31);
       return;
     }
     if (isAdmin && message.message === "/next") {

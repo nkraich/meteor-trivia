@@ -1,6 +1,6 @@
 <template name="trivia">
   <div id="triviaWrapper">
-    {{#if running}}
+    {{#if isRunning}}
       {{> question }}
     {{else}}
       {{> rules }}
@@ -8,7 +8,7 @@
     <div id="triviaPush"></div>
   </div>
   <div id="triviaFooter">
-    {{#if running}}
+    {{#if isRunning}}
       {{> info }}
     {{/if}}
   </div>

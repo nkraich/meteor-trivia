@@ -44,7 +44,7 @@ initMain = function()
   }, 1000);
 
   // Update the time when the question changes.
-  var cursor = Questions.find({});
+  var cursor = Questions.find({current: true});
   cursor.observeChanges({
     added: function() {
       //Meteor.call('heartbeat');

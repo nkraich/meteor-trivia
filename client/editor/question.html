@@ -1,0 +1,68 @@
+<template name="editorQuestion">
+<div class="editor-page">
+
+  <br>
+  <div class="row">
+    <div class="col-xs-4">
+      <a href="/editor"><span class="glyphicon glyphicon glyphicon-chevron-left"></span> Questions</a>
+    </div>
+    <div class="col-xs-4" style="text-align: center">
+      October 18th, 2014
+    </div>
+    <div class="col-xs-4" style="text-align: right">
+      <div class="button" id="createAccountButton">Upload image</div>
+    </div>
+  </div>
+  <br>
+
+  <div class="row">
+    <div class="col-xs-9">
+      <p>
+        Question text
+      </p>
+      <p>
+        <textarea id="question-text" rows="3" class="form-control input-md" value="{{ questionText }}">{{prompt}}</textarea>
+      </p>
+    </div>
+    <div class="col-xs-3" style="text-align: right">
+    </div>
+  </div>
+  <hr>
+
+  <p>
+    Answers <i style="font-size: 10px; color: #777">(will be shown in random order)</i>
+  </p>
+  <p>
+    <div class="row">
+      <div class="col-xs-6">
+        <textarea id="incorrect-answer-1" rows="3" class="form-control input-md" value="{{ incorrectAnswer1 }}" placeholder="Incorrect answer" style="background: #fff8f8">{{answerA}}</textarea>
+      </div>
+      <div class="col-xs-6">
+        <textarea id="incorrect-answer-2" rows="3" class="form-control input-md" value="{{ incorrectAnswer2 }}" placeholder="Incorrect answer" style="background: #fff8f8">{{answerB}}</textarea>
+      </div>
+    </div>
+  </p>
+  <br>
+  <p>
+    <div class="row">
+      <div class="col-xs-6">
+        <textarea id="incorrect-answer-3" rows="3" class="form-control input-md" value="{{ incorrectAnswer3 }}" placeholder="Incorrect answer" style="background: #fff8f8">{{answerC}}</textarea>
+      </div>
+      <div class="col-xs-6">
+        <textarea id="correct-answer" rows="3" class="form-control input-md" value="{{ correctAnswer }}" placeholder="Correct answer" style="background: #e8ffe8">{{answerD}}</textarea>
+      </div>
+    </div>
+  </p>
+
+  <br>
+  <div>
+    <div class="button large" id="cancelButton">Cancel</div>
+    <div class="button large" style="float: right" id="saveButton">Save</div>
+  </div>
+
+  <hr>
+
+  <p><a href="#">Delete this question</a></p>
+
+</div>
+</template>

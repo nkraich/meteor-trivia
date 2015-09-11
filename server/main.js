@@ -61,7 +61,7 @@ initMain = function()
         'services.resume.loginTokens': {$size: 1}
       },
       {
-        fields: {'username': 1, 'score': 1, 'away': 1},
+        fields: {'profile.name': 1, 'score': 1, 'away': 1},
         sort: {score: 1}
       }
     );

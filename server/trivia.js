@@ -12,7 +12,8 @@ initTrivia = function() {
 
   Questions.update({}, {$set: {current: false}}, {multi: true});
   Meteor.publish("trivia", function(channelName) {
-    return Questions.find({current: true});
+    //return Questions.find({current: true});
+    return Questions.find({});
   });
 
   timeRemaining = SECONDS_PER_QUESTION;

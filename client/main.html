@@ -17,11 +17,12 @@
 
 <template name="header">
   <header>
-    <div id="status">Practice round in-progress.</div>
-    <a href="http://kraich.com" target="_blank" id="logo">Meteor Trivia</a>
-    <div class="menuBar">
-      <div class="menuBarItem">{{ username }}</div>
-    </div>
+    <div id="status"></div>
+    <a href="/" id="logo">Meteor Trivia</a>
+    <menu>
+      <a href="/editor"><li class="menuBarItem">Question editor</li></a>
+      <a href="/settings"><li class="menuBarItem">Settings</li></a>
+    </menu>
   </header>
 </template>
 

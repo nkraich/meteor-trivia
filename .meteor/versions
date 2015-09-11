@@ -60,6 +60,7 @@ mizzao:timesync@0.2.2
 mizzao:user-status@0.6.2
 mongo-livedata@1.0.4
 mongo@1.0.4
+mrt:moment@2.8.1
 npm-bcrypt@0.7.7
 observe-sequence@1.0.2
 ordered-dict@1.0.0
@@ -83,4 +84,4 @@ tracker@1.0.2
 ui@1.0.2
 underscore@1.0.0
 webapp@1.0.3
-zuuk:stale-session@1.0.3
+zuuk:stale-session@1.0.7
